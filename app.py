@@ -45,7 +45,7 @@ TEAM_MANAGER_DATA = {
     'Liverpool': ('Arne Slot', '£1.5m'),
     'Man City': ('Pep Guardiola', '£1.5m'),
     'Newcastle': ('Eddie Howe', '£1.5m'),
-    'AFC Bournemouth': ('Andoni Iraola', '£1.1m'),
+    'Bournemouth': ('Andoni Iraola', '£1.1m'),
     'Brighton': ('Fabian Hurzeler', '£1.1m'),
     'Fulham': ('Marco Silva', '£1.1m'),
     'Nottingham Forest': ('Nuno Espirito Santo', '£1.1m'),
@@ -281,7 +281,7 @@ def main():
     page = st.sidebar.radio(
         "Navigate", 
         ["Overall View", "Event Points", "Team History", "About"],
-        index=2
+        index=0
     )
     
     # Load data
