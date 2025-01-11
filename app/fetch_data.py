@@ -362,6 +362,7 @@ class PremierLeaguePointsCalculator:
                     "team": home_team,
                     "total_points": derived_points,
                     "total_win_points": win_points,
+                    "total_draw_points": draw_points,
                     "total_goal_points": goal_points,
                     "total_cs_points": cs_points,
                     "total_table_bonus": table_bonus
@@ -402,6 +403,7 @@ class PremierLeaguePointsCalculator:
                     "team": away_team,
                     "total_points": derived_points,
                     "total_win_points": win_points,
+                    "total_draw_points": draw_points,
                     "total_goal_points": goal_points,
                     "total_cs_points": cs_points,
                     "total_table_bonus": table_bonus
