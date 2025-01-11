@@ -4,7 +4,7 @@ import os
 
 # Set page configuration
 st.set_page_config(
-    page_title="Assistant Manager Points Tracker", page_icon="⚽", layout="wide"
+    page_title="Assistant Manager Points Tracker", page_icon="⚽", layout="centered"
 )
 
 # Define file paths
