@@ -258,7 +258,7 @@ class PremierLeaguePointsCalculator:
         - Win = 6 points, Draw = 3 points, Loss = 0
         - +1 point per goal scored
         - +2 points for a clean sheet
-        - Table bonus: if facing an opponent at least 5 positions higher 
+        - Table bonus: if facing an opponent at least 5 positions higher
             at the start of the event:
                 +10 points for a win, +5 for a draw
 
@@ -268,7 +268,9 @@ class PremierLeaguePointsCalculator:
 
         # If there's no league table, we can't reference positions
         if self.league_positions_df.empty:
-            raise ValueError("league_positions_df is empty. Please calculate or fetch the league table first.")
+            raise ValueError(
+                "league_positions_df is empty. Please calculate or fetch the league table first."
+            )
 
         # If match_results_df is empty, fetch fixtures
         if self.match_results_df.empty:
@@ -291,19 +293,22 @@ class PremierLeaguePointsCalculator:
             # But if event == 1 and there's no event=0 in league_positions_df,
             # we fallback to event 0 or all positions = 1.
             prev_event = event - 1
-            prev_event_league_df = self.league_positions_df[self.league_positions_df["event"] == prev_event]
+            prev_event_league_df = self.league_positions_df[
+                self.league_positions_df["event"] == prev_event
+            ]
 
             if prev_event_league_df.empty:
                 # If we have *no* previous event data, assume all teams have position=1
                 # or some default. We'll do a naive approach:
                 unique_teams = pd.unique(self.league_positions_df["team_name"])
-                prev_event_league_df = pd.DataFrame({
-                    "team_name": unique_teams,
-                    "position": 1
-                })
+                prev_event_league_df = pd.DataFrame(
+                    {"team_name": unique_teams, "position": 1}
+                )
 
             # Create a dict: team_position[event-1]
-            team_pos_dict = dict(zip(prev_event_league_df["team_name"], prev_event_league_df["position"]))
+            team_pos_dict = dict(
+                zip(prev_event_league_df["team_name"], prev_event_league_df["position"])
+            )
 
             # -------------------------------------------------------
             # 2) Gather all matches in this event
@@ -353,20 +358,24 @@ class PremierLeaguePointsCalculator:
                         if win_points == 6:
                             table_bonus = 10  # total 16
                         elif draw_points == 3:
-                            table_bonus = 5   # total 8
+                            table_bonus = 5  # total 8
 
-                derived_points = win_points + draw_points + goal_points + cs_points + table_bonus
+                derived_points = (
+                    win_points + draw_points + goal_points + cs_points + table_bonus
+                )
 
-                event_points_list.append({
-                    "event": event,
-                    "team": home_team,
-                    "total_points": derived_points,
-                    "total_win_points": win_points,
-                    "total_draw_points": draw_points,
-                    "total_goal_points": goal_points,
-                    "total_cs_points": cs_points,
-                    "total_table_bonus": table_bonus
-                })
+                event_points_list.append(
+                    {
+                        "event": event,
+                        "team": home_team,
+                        "total_points": derived_points,
+                        "total_win_points": win_points,
+                        "total_draw_points": draw_points,
+                        "total_goal_points": goal_points,
+                        "total_cs_points": cs_points,
+                        "total_table_bonus": table_bonus,
+                    }
+                )
 
                 # ---------------------
                 # AWAY TEAM
@@ -396,18 +405,22 @@ class PremierLeaguePointsCalculator:
                         elif draw_points == 3:
                             table_bonus = 5
 
-                derived_points = win_points + draw_points + goal_points + cs_points + table_bonus
+                derived_points = (
+                    win_points + draw_points + goal_points + cs_points + table_bonus
+                )
 
-                event_points_list.append({
-                    "event": event,
-                    "team": away_team,
-                    "total_points": derived_points,
-                    "total_win_points": win_points,
-                    "total_draw_points": draw_points,
-                    "total_goal_points": goal_points,
-                    "total_cs_points": cs_points,
-                    "total_table_bonus": table_bonus
-                })
+                event_points_list.append(
+                    {
+                        "event": event,
+                        "team": away_team,
+                        "total_points": derived_points,
+                        "total_win_points": win_points,
+                        "total_draw_points": draw_points,
+                        "total_goal_points": goal_points,
+                        "total_cs_points": cs_points,
+                        "total_table_bonus": table_bonus,
+                    }
+                )
 
             # -------------------------------------------------------
             # 3) Convert this event's data into a DataFrame and store
