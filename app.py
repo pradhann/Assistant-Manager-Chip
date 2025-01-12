@@ -224,6 +224,49 @@ h1, h2, h3, h4, h5, h6 {
     display: none; /* Hide row index icon in dataframes */
 }
 
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .stat-cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .stat-card {
+        width: 100%; /* Full width for smaller screens */
+    }
+    .team-row, .match-result {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    .match-score {
+        width: auto;
+        text-align: left;
+    }
+    .block-container {
+        padding: 1rem;
+    }
+    h1, h2, h3 {
+        font-size: 1.5rem;
+    }
+}
+
+    .scrollable-container {
+        overflow-x: auto; /* Enable horizontal scrolling */
+        white-space: nowrap; /* Prevent wrapping of content */
+    }
+
+    .team-row, .header-row {
+        display: flex;
+        flex-wrap: nowrap; /* Prevent wrapping within rows */
+    }
+
+    .team-logo {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+        margin-right: 10px;
+        vertical-align: middle;
+    }
 </style>
 """,
     unsafe_allow_html=True,
@@ -322,6 +365,7 @@ def main():
         # Header row
         st.markdown(
             """
+         <div class="scrollable-container">
         <div class="team-row header-row">
             <div>Team</div>
             <div>Manager</div>
@@ -331,11 +375,14 @@ def main():
             <div>Avg Points</div>
             <div>Total Table Bonus</div>
         </div>
+        </div>
         """,
             unsafe_allow_html=True,
         )
 
         # Display team rows
+        # Display team rows inside the scrollable container
+        st.markdown('<div class="scrollable-container">', unsafe_allow_html=True)
         for _, row in team_stats.iterrows():
             manager, price = get_manager_and_price(row["Team"])
             st.markdown(
@@ -355,6 +402,7 @@ def main():
             """,
                 unsafe_allow_html=True,
             )
+        st.markdown("</div>", unsafe_allow_html=True)
 
     elif page == "Event Points":
         # 1. Collect all events and allow multi-selection
