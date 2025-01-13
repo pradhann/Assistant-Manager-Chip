@@ -12,6 +12,8 @@ Here's the updated text file content with the added images for the demo section:
 ## Overview
 
 Deployed Here: https://assistant-manager-chip.streamlit.app/
+
+
 Assistant Manager Points Tracker is a user-friendly Streamlit web application for tracking and visualizing soccer (football) teams’ performance. It calculates key metrics such as total points, average points, match (win/draw) points, goal points, clean sheet points, and table bonus points. You can also explore game-by-game results and see detailed points history for any team.
 
 **Features**  
