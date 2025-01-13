@@ -333,7 +333,7 @@ def main():
 
     # Sidebar for navigation
     page = st.sidebar.radio(
-        "Navigate", ["Overall View", "Event Points", "Team History", "About"], index=0
+        "Navigate", ["Overall View", "Gameweek Points", "Team History", "About"], index=0
     )
 
     # Load data
@@ -404,7 +404,7 @@ def main():
             )
         st.markdown("</div>", unsafe_allow_html=True)
 
-    elif page == "Event Points":
+    elif page == "Gameweek Points":
         # 1. Collect all events and allow multi-selection
         all_events = sorted(points_df["event"].unique())
 
@@ -412,12 +412,12 @@ def main():
         default_selection = [1] if 1 in all_events else []
 
         selected_events = st.multiselect(
-            "Select Event(s)", all_events, default=default_selection
+            "Select Gameweek(s)", all_events, default=default_selection
         )
 
         # 2. Stop if no events selected
         if not selected_events:
-            st.warning("No events selected. Please pick at least one event.")
+            st.warning("No Gameweek selected. Please pick at least one gameweek.")
             st.stop()
 
         # 3. Filter the points dataframe to only the selected events
@@ -443,7 +443,7 @@ def main():
 
         # 5. Display a table of aggregated points
         event_list_str = ", ".join(map(str, selected_events))
-        st.subheader(f"Assistant Points for Event(s) {event_list_str}")
+        st.subheader(f"Assistant Points for Gameweek(s) {event_list_str}")
         st.dataframe(
             aggregated_points[
                 [
@@ -461,7 +461,7 @@ def main():
 
         # 6. Display match results event by event
         for ev in sorted(selected_events):
-            st.subheader(f"Match Results for Event {ev}")
+            st.subheader(f"Match Results for Gameweek {ev}")
             matches_for_this_event = results_df[results_df["event"] == ev]
             for _, match in matches_for_this_event.iterrows():
                 display_match_result(match)
