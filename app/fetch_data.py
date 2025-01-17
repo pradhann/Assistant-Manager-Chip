@@ -36,7 +36,7 @@ class PremierLeaguePointsCalculator:
         logging.basicConfig(
             level=logging.INFO,
             format="%(asctime)s - %(levelname)s: %(message)s",
-            filename="premier_league_points.log",
+            filename="data/premier_league_points.log",
         )
         self.logger = logging.getLogger(__name__)
 

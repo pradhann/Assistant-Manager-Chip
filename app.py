@@ -8,7 +8,7 @@ st.set_page_config(
 )
 
 # Define file paths
-BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "app")
+BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)))
 POINTS_FILE = os.path.join(BASE_DIR, "data", "assistant_manager_points.csv")
 RESULTS_FILE = os.path.join(BASE_DIR, "data", "results.csv")
 
@@ -409,7 +409,7 @@ def main():
         all_events = sorted(points_df["event"].unique())
 
         # Set default selection to [1], if 1 exists in all_events
-        default_selection = [1] if 1 in all_events else []
+        default_selection = [] if 1 in all_events else []
 
         selected_events = st.multiselect(
             "Select Gameweek(s)", all_events, default=default_selection

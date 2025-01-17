@@ -1,43 +1,43 @@
 event,team_name,points,goals_scored,goals_conceded,goal_difference,wins,draws,losses,position
-0,Fulham,0,0,0,0,0,0,0,1
-0,Southampton,0,0,0,0,0,0,0,1
-0,Crystal Palace,0,0,0,0,0,0,0,1
-0,Man Utd,0,0,0,0,0,0,0,1
-0,Ipswich,0,0,0,0,0,0,0,1
-0,Nottingham Forest,0,0,0,0,0,0,0,1
 0,Aston Villa,0,0,0,0,0,0,0,1
-0,Chelsea,0,0,0,0,0,0,0,1
-0,Wolves,0,0,0,0,0,0,0,1
-0,West Ham,0,0,0,0,0,0,0,1
-0,Bournemouth,0,0,0,0,0,0,0,1
-0,Spurs,0,0,0,0,0,0,0,1
-0,Arsenal,0,0,0,0,0,0,0,1
+0,Nottingham Forest,0,0,0,0,0,0,0,1
 0,Brighton,0,0,0,0,0,0,0,1
-0,Newcastle,0,0,0,0,0,0,0,1
-0,Man City,0,0,0,0,0,0,0,1
-0,Liverpool,0,0,0,0,0,0,0,1
-0,Leicester,0,0,0,0,0,0,0,1
-0,Everton,0,0,0,0,0,0,0,1
+0,Arsenal,0,0,0,0,0,0,0,1
+0,Man Utd,0,0,0,0,0,0,0,1
+0,Crystal Palace,0,0,0,0,0,0,0,1
+0,Chelsea,0,0,0,0,0,0,0,1
 0,Brentford,0,0,0,0,0,0,0,1
+0,Leicester,0,0,0,0,0,0,0,1
+0,Liverpool,0,0,0,0,0,0,0,1
+0,Bournemouth,0,0,0,0,0,0,0,1
+0,Wolves,0,0,0,0,0,0,0,1
+0,Fulham,0,0,0,0,0,0,0,1
+0,Ipswich,0,0,0,0,0,0,0,1
+0,Newcastle,0,0,0,0,0,0,0,1
+0,West Ham,0,0,0,0,0,0,0,1
+0,Everton,0,0,0,0,0,0,0,1
+0,Spurs,0,0,0,0,0,0,0,1
+0,Man City,0,0,0,0,0,0,0,1
+0,Southampton,0,0,0,0,0,0,0,1
 1,Brighton,3,3,0,3,1,0,0,1
 1,Arsenal,3,2,0,2,1,0,0,2
-1,Man City,3,2,0,2,1,0,0,2
 1,Liverpool,3,2,0,2,1,0,0,2
+1,Man City,3,2,0,2,1,0,0,2
 1,Aston Villa,3,2,1,1,1,0,0,5
 1,Brentford,3,2,1,1,1,0,0,5
 1,Man Utd,3,1,0,1,1,0,0,7
 1,Newcastle,3,1,0,1,1,0,0,7
 1,Nottingham Forest,1,1,1,0,0,1,0,9
+1,Leicester,1,1,1,0,0,1,0,9
 1,Bournemouth,1,1,1,0,0,1,0,9
 1,Spurs,1,1,1,0,0,1,0,9
-1,Leicester,1,1,1,0,0,1,0,9
 1,Crystal Palace,0,1,2,-1,0,0,1,13
 1,West Ham,0,1,2,-1,0,0,1,13
 1,Fulham,0,0,1,-1,0,0,1,15
 1,Southampton,0,0,1,-1,0,0,1,15
-1,Ipswich,0,0,2,-2,0,0,1,17
 1,Chelsea,0,0,2,-2,0,0,1,17
 1,Wolves,0,0,2,-2,0,0,1,17
+1,Ipswich,0,0,2,-2,0,0,1,17
 1,Everton,0,0,3,-3,0,0,1,20
 2,Man City,6,6,1,5,2,0,0,1
 2,Brighton,6,5,1,4,2,0,0,2
@@ -419,3 +419,23 @@ event,team_name,points,goals_scored,goals_conceded,goal_difference,wins,draws,lo
 20,Ipswich,16,20,35,-15,3,7,10,18
 20,Leicester,14,23,44,-21,3,5,12,19
 20,Southampton,6,12,44,-32,1,3,16,20
+21,Liverpool,47,48,20,28,14,5,1,1
+21,Arsenal,43,41,19,22,12,7,2,2
+21,Nottingham Forest,41,30,20,10,12,5,4,3
+21,Newcastle,38,37,22,15,11,5,5,4
+21,Chelsea,37,41,26,15,10,7,4,5
+21,Man City,35,38,29,9,10,5,6,6
+21,Aston Villa,35,31,32,-1,10,5,6,7
+21,Bournemouth,34,32,25,7,9,7,5,8
+21,Brighton,31,32,29,3,7,10,4,9
+21,Fulham,30,32,30,2,7,9,5,10
+21,Brentford,28,40,37,3,8,4,9,11
+21,Man Utd,26,26,29,-3,7,5,9,12
+21,West Ham,26,27,41,-14,7,5,9,13
+21,Spurs,24,43,32,11,7,3,11,14
+21,Crystal Palace,24,23,28,-5,5,9,7,15
+21,Everton,17,15,26,-11,3,8,9,16
+21,Wolves,16,31,48,-17,4,4,13,17
+21,Ipswich,16,20,37,-17,3,7,11,18
+21,Leicester,14,23,46,-23,3,5,13,19
+21,Southampton,6,13,47,-34,1,3,17,20
