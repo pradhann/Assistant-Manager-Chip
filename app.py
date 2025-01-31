@@ -341,9 +341,11 @@ def main():
         ["Overall View", "Gameweek Points", "Team History", "About"],
         index=["Overall View", "Gameweek Points", "Team History", "About"].index(st.session_state.page)
     )
-    
+
     # Update session state with the selected page
-    st.session_state.page = page
+    if page != st.session_state.page:
+        st.session_state.page = page
+        st.rerun()
 
     # Load data
     points_df = load_points_data()
