@@ -331,10 +331,19 @@ def get_league_position(points_df, selected_team):
 def main():
     st.title("🏆 Assistant Manager Points Tracker")
 
+    # Initialize session state for the page if it doesn't exist
+    if 'page' not in st.session_state:
+        st.session_state.page = "Overall View"  # Default page
+
     # Sidebar for navigation
     page = st.sidebar.radio(
-        "Navigate", ["Overall View", "Gameweek Points", "Team History", "About"], index=0
+        "Navigate", 
+        ["Overall View", "Gameweek Points", "Team History", "About"],
+        index=["Overall View", "Gameweek Points", "Team History", "About"].index(st.session_state.page)
     )
+    
+    # Update session state with the selected page
+    st.session_state.page = page
 
     # Load data
     points_df = load_points_data()
