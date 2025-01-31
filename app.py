@@ -409,7 +409,7 @@ def main():
         all_events = sorted(points_df["event"].unique())
 
         # Set default selection to [1], if 1 exists in all_events
-        default_selection = [] if 1 in all_events else []
+        default_selection = all_events[-1]
 
         selected_events = st.multiselect(
             "Select Gameweek(s)", all_events, default=default_selection
